@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://b58g8ybe1p3p7" path="res://components/world/world_tileset.png" id="1_vl24i"]
 [ext_resource type="PackedScene" uid="uid://kmf7i38wjga8" path="res://components/player/player.tscn" id="1_x286i"]
-[ext_resource type="PackedScene" uid="uid://b27g6nf57jn2" path="res://components/bullet/bullet.tscn" id="3_dpm3d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dpm3d"]
 texture = ExtResource("1_vl24i")
@@ -149,6 +148,3 @@ tile_set = SubResource("TileSet_68pxc")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1708068194]
 zoom = Vector2(2, 2)
-
-[node name="Bullet" parent="." unique_id=1826791461 instance=ExtResource("3_dpm3d")]
-position = Vector2(62, -129)
