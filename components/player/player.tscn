@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://kmf7i38wjga8"]
 
+[ext_resource type="Script" uid="uid://ccxda26odpb85" path="res://components/player/player.gd" id="1_kfe3d"]
 [ext_resource type="Texture2D" uid="uid://06ayu16odaoj" path="res://components/player/player.png" id="1_t3162"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kfe3d"]
@@ -42,13 +43,14 @@ animations = [{
 radius = 5.0
 
 [node name="Player" type="CharacterBody2D" unique_id=796814591]
+script = ExtResource("1_kfe3d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=848988689]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_pvtfm")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.14805578
+frame_progress = 0.5672354
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=874199800]
 position = Vector2(0, -5)
