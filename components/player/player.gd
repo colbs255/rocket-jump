@@ -3,8 +3,11 @@ extends CharacterBody2D
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
+const BULLET_VELOCITY = 200
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+const BULLET = preload("res://components/bullet/bullet.tscn")
 
 func _physics_process(delta: float) -> void:
     # Add the gravity.
@@ -29,10 +32,18 @@ func _physics_process(delta: float) -> void:
     else:
         animated_sprite.play("run")
         
-        
     if direction:
         velocity.x = direction * SPEED
     else:
         velocity.x = move_toward(velocity.x, 0, SPEED)
+        
+    if Input.is_action_just_pressed("shoot"):
+        shoot(Vector2.RIGHT)
 
     move_and_slide()
+    
+func shoot(direction: Vector2) -> void:
+    var bullet = BULLET.instantiate()
+    add_sibling(bullet)
+    bullet.global_position = global_position
+    bullet.velocity = direction.normalized() * BULLET_VELOCITY

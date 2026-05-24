@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b27g6nf57jn2"]
 
 [ext_resource type="Texture2D" uid="uid://sbvuwt0pifvh" path="res://components/bullet/bullet.png" id="1_142lv"]
+[ext_resource type="Script" uid="uid://b2bdln4grnwrr" path="res://components/bullet/bullet.gd" id="1_j7bu3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j7bu3"]
 atlas = ExtResource("1_142lv")
@@ -98,6 +99,7 @@ animations = [{
 radius = 5.0
 
 [node name="Bullet" type="Area2D" unique_id=1712693318]
+script = ExtResource("1_j7bu3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1528697516]
 sprite_frames = SubResource("SpriteFrames_g7snk")
